@@ -97,6 +97,7 @@ public class WindowControl : MonoBehaviour
             //    moveToPos = false;
             //}
         }
+        Debug.Log(1 + 1);
     }
 
     private void FixedUpdate()
