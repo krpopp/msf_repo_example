@@ -30,14 +30,15 @@ public class WindowControl : MonoBehaviour
     }
 
     Vector3 lMPos;
-    Vector3 mPos;
+    Vector2 mPos;
+    Vector3 lastPos;
 
     GameObject followObject;
 
     GameObject myChild;
 
     Vector3 targ;
-    public bool moveToPos = false;
+    private bool moveToPos = false;
 
     public bool inWindow = false;
 
@@ -49,11 +50,6 @@ public class WindowControl : MonoBehaviour
 
     Dictionary<SpriteRenderer, int> spriteOrdering = new Dictionary<SpriteRenderer, int>();
 
-    //to keep track of player score
-    public static int playerScore = 0;
-
-    //for all the crazy audio sources we have
-    List<AudioSource> audioSources = new List<AudioSource>();
 
     private void Awake()
     {
@@ -92,43 +88,12 @@ public class WindowControl : MonoBehaviour
         }
     }
 
-    public void TurnOffColl()
+    private void FixedUpdate()
     {
-        myCollider.enabled = false;
+        Debug.Log("hiiiii");
     }
 
-    public void TurnOff()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void StartMoveToNewPos(Vector3 _newPos)
-    {
-        targ = _newPos;
-        moveToPos = true;
-    }
-
-    private void OnMouseEnter()
-    {
-        inWindow = true;
-    }
-
-    void OnMouseExit()
-    {
-        inWindow = false;
-    }
-
-    void OnEnable()
-    {
-        WindowManager.AddToOpenWindows(gameObject);
-    }
-
-    void OnDisable()
-    {
-        WindowManager.RemoveFromOpenWindows(gameObject);
-    }
-
-    public void UpdateAllSprites()
+    public void DoNotUpdateSprites()
     {
         foreach(var i in spriteOrdering)
         {
