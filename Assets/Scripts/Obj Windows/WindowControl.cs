@@ -49,6 +49,12 @@ public class WindowControl : MonoBehaviour
 
     Dictionary<SpriteRenderer, int> spriteOrdering = new Dictionary<SpriteRenderer, int>();
 
+    //to keep track of player score
+    public static int playerScore = 0;
+
+    //for all the crazy audio sources we have
+    List<AudioSource> audioSources = new List<AudioSource>();
+
     private void Awake()
     {
         MakeSpriteDictionary();
