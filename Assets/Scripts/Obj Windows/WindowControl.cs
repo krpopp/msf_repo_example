@@ -55,6 +55,9 @@ public class WindowControl : MonoBehaviour
     //for all the crazy audio sources we have
     List<AudioSource> audioSources = new List<AudioSource>();
 
+    //Window Objects to spawn!
+    GameObject[] prefabs;
+
     private void Awake()
     {
         MakeSpriteDictionary();
@@ -62,6 +65,9 @@ public class WindowControl : MonoBehaviour
         //{
         //    WindowManager.AddToOpenWindows(gameObject);
         //}
+        
+        //yipeee
+        Debug.Log(prefabs[3]);
     }
 
     // Start is called before the first frame update
@@ -70,7 +76,6 @@ public class WindowControl : MonoBehaviour
         followObject = GameObject.Find("FollowObject");
         myChild = gameObject.transform.GetChild(0).gameObject;
         myCollider = GetComponent<Collider2D>();
-        
     }
     
     // Update is called once per frame
@@ -78,6 +83,12 @@ public class WindowControl : MonoBehaviour
     {
         mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mPos.z = 0;
+
+        //math stuff
+        int a = Random.Range(1, 3);
+        int b;
+        Debug.Log(a/b);
+
         if (moveToPos)
         {
             Debug.Log("move");
@@ -141,7 +152,7 @@ public class WindowControl : MonoBehaviour
                     i.Key.GetComponent<TeethControl>().baseToothSort = newOrder;
                 }
             }
-        }
+        
     }
 
     void MakeSpriteDictionary()
