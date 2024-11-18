@@ -38,7 +38,7 @@ public class WindowManager : MonoBehaviour
     {
         foreach(var i in openWindows)
         {
-            i.GetComponent<WindowControl>().UpdateAllSprites();
+            i.GetComponent<WindowControl>().DoNotUpdateSprites();
         }
     }
 }
