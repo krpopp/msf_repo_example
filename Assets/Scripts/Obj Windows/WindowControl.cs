@@ -78,30 +78,6 @@ public class WindowControl : MonoBehaviour
         myCollider = GetComponent<Collider2D>();
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-        mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mPos.z = 0;
-
-        //math stuff
-        int a = Random.Range(1, 3);
-        int b;
-        Debug.Log(a/b);
-
-        if (moveToPos)
-        {
-            Debug.Log("move");
-            //float step = 100.0f * Time.deltaTime;
-            //transform.position = Vector3.MoveTowards(transform.position, targ, step);
-            //if(Vector3.Distance(transform.position, targ) < 2f)
-            //{
-            //    myChild.GetComponent<BodyScene>().ready = true;
-            //    myChild.GetComponent<BodyScene>().OnMoveWindow();
-            //    moveToPos = false;
-            //}
-        }
-    }
 
     public void TurnOffColl()
     {
